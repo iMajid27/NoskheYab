@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'IRANYekan';
+  src: url('/fonts/Yekan.woff2') format('woff2'),
+       url('/fonts/Yekan.woff') format('woff'),
+       url('/fonts/BYekan+.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'IRANYekan';
+  src: url('/fonts/BYekan+_Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --text-50: #fbf5ea; --text-100: #f7ebd4; --text-200: #efd6a9; --text-300: #e7c27e; --text-400: #deae54; --text-500: #d69a29; --text-600: #ab7b21; --text-700: #815c18; --text-800: #563d10; --text-900: #2b1f08; --text-950: #150f04;
+    --background-50: #f1f2f4; --background-100: #e3e5e8; --background-200: #c7cbd1; --background-300: #abb1ba; --background-400: #8f97a3; --background-500: #737d8c; --background-600: #5c6470; --background-700: #454b54; --background-800: #2e3238; --background-900: #17191c; --background-950: #0b0c0e;
+    --primary-50: #e8fcfa; --primary-100: #d2f9f6; --primary-200: #a5f3ed; --primary-300: #78ede4; --primary-400: #4ae8da; --primary-500: #1de2d1; --primary-600: #17b5a7; --primary-700: #12877e; --primary-800: #0c5a54; --primary-900: #062d2a; --primary-950: #031715;
+    --secondary-50: #e8eefd; --secondary-100: #d0defb; --secondary-200: #a2bcf6; --secondary-300: #739bf2; --secondary-400: #447aee; --secondary-500: #1659e9; --secondary-600: #1147bb; --secondary-700: #0d358c; --secondary-800: #09235d; --secondary-900: #04122f; --secondary-950: #020917;
+    --accent-50: #e8fcfa; --accent-100: #d1faf5; --accent-200: #a3f5eb; --accent-300: #75f0e1; --accent-400: #47ebd8; --accent-500: #19e6ce; --accent-600: #14b8a5; --accent-700: #0f8a7b; --accent-800: #0a5c52; --accent-900: #052e29; --accent-950: #031715;
+    --radius: 0.625rem;
+  }
+
+  .dark {
+    --text-50: #150f04; --text-100: #2b1f08; --text-200: #563d10; --text-300: #815c18; --text-400: #ab7b21; --text-500: #d69a29; --text-600: #deae54; --text-700: #e7c27e; --text-800: #efd6a9; --text-900: #f7ebd4; --text-950: #fbf5ea;
+    --background-50: #0b0c0e; --background-100: #17191c; --background-200: #2e3238; --background-300: #454b54; --background-400: #5c6470; --background-500: #737d8c; --background-600: #8f97a3; --background-700: #abb1ba; --background-800: #c7cbd1; --background-900: #e3e5e8; --background-950: #f1f2f4;
+    --primary-50: #031715; --primary-100: #062d2a; --primary-200: #0c5a54; --primary-300: #12877e; --primary-400: #17b5a7; --primary-500: #1de2d1; --primary-600: #4ae8da; --primary-700: #78ede4; --primary-800: #a5f3ed; --primary-900: #d2f9f6; --primary-950: #e8fcfa;
+    --secondary-50: #020917; --secondary-100: #04122f; --secondary-200: #09235d; --secondary-300: #0d358c; --secondary-400: #1147bb; --secondary-500: #1659e9; --secondary-600: #447aee; --secondary-700: #739bf2; --secondary-800: #a2bcf6; --secondary-900: #d0defb; --secondary-950: #e8eefd;
+    --accent-50: #031715; --accent-100: #052e29; --accent-200: #0a5c52; --accent-300: #0f8a7b; --accent-400: #14b8a5; --accent-500: #19e6ce; --accent-600: #47ebd8; --accent-700: #75f0e1; --accent-800: #a3f5eb; --accent-900: #d1faf5; --accent-950: #e8fcfa;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    border-color: var(--background-200);
+  }
+  body {
+    background-color: var(--background-50);
+    color: var(--text-900);
+    font-family: 'IRANYekan', system-ui, sans-serif;
+  }
+  .dark body {
+    background-color: var(--background-50);
+    color: var(--text-900);
+  }
+}
+
+@layer utilities {
+  .mesh-gradient {
+    background-image:
+      radial-gradient(at 20% 30%, var(--primary-200) 0%, transparent 50%),
+      radial-gradient(at 80% 20%, var(--secondary-200) 0%, transparent 50%),
+      radial-gradient(at 50% 80%, var(--accent-200) 0%, transparent 50%);
+    background-color: var(--background-50);
+  }
+  .dark .mesh-gradient {
+    background-image:
+      radial-gradient(at 20% 30%, var(--primary-300) 0%, transparent 50%),
+      radial-gradient(at 80% 20%, var(--secondary-300) 0%, transparent 50%),
+      radial-gradient(at 50% 80%, var(--accent-300) 0%, transparent 50%);
+    background-color: var(--background-50);
+  }
+  .text-gradient {
+    background: linear-gradient(135deg, var(--primary-600), var(--primary-800));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .dark .text-gradient {
+    background: linear-gradient(135deg, var(--primary-400), var(--primary-200));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--background-100); }
+::-webkit-scrollbar-thumb { background: var(--primary-400); border-radius: 4px; }

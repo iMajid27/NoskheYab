@@ -1,0 +1,52 @@
+# ==========================================
+# 🚨 STRICT SECURITY & ENVIRONMENT FILES 🚨
+# ==========================================
+# هیچ فایل محیطی و پسوردی نباید آپلود شود
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.example
+.env.*
+*.pem
+*.key
+*.cert
+
+# ==========================================
+# 🗄️ DATABASE FILES (توصیه دولوپر)
+# ==========================================
+# جلوگیری از آپلود فایل‌های خام دیتابیس
+*.db
+*.sqlite
+*.sqlite3
+*.dump
+
+# ==========================================
+# 📦 DEPENDENCIES & BUILD
+# ==========================================
+/node_modules
+/.pnp
+.pnp.js
+/.next/
+/out/
+/build
+/dist
+
+# ==========================================
+# 🐛 LOGS & DEBUGGING
+# ==========================================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+*.log
+
+# ==========================================
+# 🛠️ MISC & SYSTEM FILES
+# ==========================================
+.DS_Store
+Thumbs.db
+.vercel
+*.tsbuildinfo
+next-env.d.ts
